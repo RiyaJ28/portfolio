@@ -1,0 +1,276 @@
+/*
+FCE4FF
+CF397F
+FFAEEB
+680909
+FFDADA
+*/
+/*
+dark color #2C3E50
+#3498DB
+#E67E22
+#F9F9F9
+ white #FFFFFF
+*/
+/* colors
+grey #EEEEEE
+teal #76ABAE
+black #222831
+dark grey #31363F
+
+*/
+* {
+  padding: 0%;
+  margin: 0%;
+}
+/*Navigation Bar /Header*/
+.header {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+nav {
+  background-color: #ffffff;
+  color: #EEEEEE;
+  overflow: hidden;
+  padding: 20px;
+}
+.navigation {
+  z-index: 1;
+  position: sticky;
+  background-color: #2c3e50;
+  color: #EEEEEE;
+}
+.navbar a{
+  color: #EEEEEE;
+}
+.hireme {
+  border-radius: 50px;
+  padding: 10px;
+  background-color: #fff8f8;
+  color: #2c3e50 !important;
+  text-decoration: none;
+  font-weight: 600;
+}
+.hireme a{
+  color: #2c3e50;
+}
+/*home.jsx */
+.home {
+  margin-top: 50px;
+  color: #2c3e50;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  /*height: 80vh;*/
+}
+.home-text {
+  float: left;
+  width: 50%;
+}
+.home-text h1 {
+  font-size: 90px;
+}
+.home-text h3 {
+  margin-top: 30px;
+}
+.home-img {
+  float: left;
+  width: 40%;
+}
+
+@media screen and (max-width: 855px) {
+  .home-text h1 {
+    font-size: 50px;
+  }
+  .home-text h3 {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 500px) and (min-width: 0px) {
+  .home {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .home-text h1 {
+    font-size: 40px;
+  }
+  .home-text .hi-Im {
+    display: inline;
+  }
+  .home-text h3 {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .home-img {
+    width: 250px;
+  }
+}
+
+/* About */
+.about {
+  background-color: #2c3e50;
+  color: #fff8f8;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.about h1 {
+  padding-bottom: 40px;
+}
+.about-Img {
+  width: 100%;
+}
+.about-text {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 2;
+}
+@media screen and (max-width: 800px) {
+  .about-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-Img {
+    width: 270px;
+  }
+}
+/*Skills */
+.skills {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #2c3e50;
+}
+.skill-card-header {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.skill-card-header h3 {
+  float: left;
+  padding-left: 20px;
+}
+.skill-card-header .img-div {
+  width: 30%;
+}
+.skill-card-header img {
+  width: 100%;
+}
+.skill-card {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.progress-bar1{
+  background-color: #2c3e50;
+  color: #2c3e50;
+}
+
+/* Projects */
+.project {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #2c3e50;
+  color: #fff8f8;
+}
+.skillSet{
+    display: inline; 
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 5px;
+    background-color: #2c3e50;
+    color: #fff8f8;
+    border-radius: 15px;
+}
+.projectCard{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+/*Contact */
+.contact{
+    color: #2c3e50;
+}
+.contactMeForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2c3e50;
+}
+.contactMeForm form{
+    width: 60%;
+    padding-bottom: 50px;
+}
+.btn-color{
+    color: #fff8f8;
+    background-color: #2c3e50;
+    border-color: #2c3e50;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 20px ;
+}
+.social{
+    color: #2c3e50;
+    margin:0px 5px;
+}
+/*footer */
+.footer{
+    padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #2c3e50;
+  color: #fff8f8;
+}
+
+/*login*/
+.loginPage{
+  background-color: #fff8f8;
+  height: 100vh;
+}
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+}
+
+
+/* Dashboard */
+
+/* Dashboard nav hamburger */
+@media screen and (min-width: 500px) {
+  .nav-hide{
+    display: none;
+  }
+}
+@media  screen and (max-width: 500px) {
+  
+}
+.side-nav{
+  min-height: 100vh;
+  background-color: #fff8f8;
+  padding: 20px !important ;
+}
+.sidenav-link
+{
+	color:black;
+	text-decoration:none;
+}
+.menu
+{
+	list-style:none;
+  padding: 5px;
+}
