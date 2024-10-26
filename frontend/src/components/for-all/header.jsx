@@ -44,7 +44,7 @@ function Header() {
           </ul>
         </div>
 
-        <a className="hireme" href="Riya_Jain_Resume.pdf">Resume</a>
+        <a className="hireme" href="#">Resume</a>
       </div>
     </nav>
   );

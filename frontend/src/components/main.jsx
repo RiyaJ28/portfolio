@@ -6,7 +6,6 @@ import Skills from "./for-all/skills";
 import Project from "./for-all/project";
 import Contact from "./for-all/contact";
 import Footer from "./for-all/footer";
-import { FollowPointerComponent } from "./for-all/use";
 import {motion} from "framer-motion";
 
 
