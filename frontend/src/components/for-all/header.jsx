@@ -44,7 +44,7 @@ function Header() {
           </ul>
         </div>
 
-        <a className="hireme" href="https://drive.google.com/drive/u/3/home">Resume</a>
+        <a className="hireme" href="https://drive.google.com/file/d/1Oyu7HkBr7jEe_I8hZXfbD07ZJmZv03mH/view?usp=drive_link">Resume</a>
       </div>
     </nav>
   );
