@@ -19,9 +19,10 @@ function DashboardHeader(props) {
           Admin Panel
         </a>
         <div className="d-flex">
-          <a>
+          <p>
+            <img src="" alt="text"></img>
             <p>{props.name}</p>
-          </a>
+          </p>
         </div>
       </div>
     </nav>
