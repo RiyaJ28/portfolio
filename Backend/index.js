@@ -498,7 +498,7 @@ app.post("/deleteEmails", async (req, res) => {
 /*-----Socials-----*/
 app.post("/editSocials", async (req, res) => {
   const data = req.body;
-  const paramsId = "66617573e411e8348dff1ed4";
+  const paramsId = process.env.SOCIAL_ID;
   // Update specific fields of the document and return the updated document
   //home.findByIdAndUpdate(paramsId, { firstName: data.firstName , lastName: data.lastName , description : data.description }, { new: true }, (err, result) => {
   try {
@@ -521,7 +521,7 @@ app.post("/editSocials", async (req, res) => {
 });
 
 app.get("/editSocialData", async (req, res) => {
-  const paramsId = "66617573e411e8348dff1ed4";
+  const paramsId = process.env.SOCIAL_ID;
   //const exampleId = 'your_document_id'; // Replace 'your_document_id' with the actual ObjectId
 
   // Convert the string to a valid ObjectId
