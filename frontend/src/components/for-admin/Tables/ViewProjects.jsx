@@ -36,6 +36,7 @@ function ViewProjects() {
     try {
       const response = await axios.post("https://portfolio-backend-5cf0.onrender.com/deleteProject", { id });
       console.log(response.data);
+      alert("Deleted successfully");
       refreshPage();
       // Handle success (optional)
     } catch (error) {

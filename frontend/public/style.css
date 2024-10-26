@@ -197,6 +197,9 @@ nav {
     margin-left: 10px;
     margin-bottom: 10px;
 }
+.card-img-top{
+  padding-top: 10px;
+}
 /*Contact */
 .contact{
     color: #2c3e50;
