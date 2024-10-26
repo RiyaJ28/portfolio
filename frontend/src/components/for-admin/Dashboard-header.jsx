@@ -20,7 +20,6 @@ function DashboardHeader(props) {
         </a>
         <div className="d-flex">
           <a>
-            <img src="" alt="text"></img>
             <p>{props.name}</p>
           </a>
         </div>
