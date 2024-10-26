@@ -30,7 +30,7 @@ function AddSkill() {
     //console.log(data);
     try {
       const response = await axios.post(
-        "http://localhost:5000/addSkills",
+        "https://portfolio-backend-5cf0.onrender.com/addSkills",
         formData , {headers: {
           'Content-Type': 'multipart/form-data'
         }}

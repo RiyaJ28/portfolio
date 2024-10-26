@@ -16,7 +16,7 @@ function Home() {
     const fetchData = async () => {
         try {
             // Make a GET request to your backend endpoint
-            const response = await axios.get('http://localhost:5000/editHomeData'); // Adjust the endpoint accordingly
+            const response = await axios.get('https://portfolio-backend-5cf0.onrender.com/editHomeData'); // Adjust the endpoint accordingly
             //console.log(response.data);
             setData({
               firstName : response.data.firstName,

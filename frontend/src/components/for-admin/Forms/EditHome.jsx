@@ -14,7 +14,7 @@ function EditHome() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/editHome", data);
+      const response = await axios.post("https://portfolio-backend-5cf0.onrender.com/editHome", data);
       console.log(response.data);
       //setFormData({ name: "", email: "", message: "" });
       // Handle success (optional)
@@ -28,7 +28,7 @@ function EditHome() {
     const fetchData = async () => {
         try {
             // Make a GET request to your backend endpoint
-            const response = await axios.get('http://localhost:5000/editHomeData'); // Adjust the endpoint accordingly
+            const response = await axios.get('https://portfolio-backend-5cf0.onrender.com/editHomeData'); // Adjust the endpoint accordingly
             //console.log(response.data);
             setData({
               firstName : response.data.firstName,

@@ -62,7 +62,7 @@ function About() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/aboutMeData"
+          "https://portfolio-backend-5cf0.onrender.com/aboutMeData"
         ); // Adjust the endpoint accordingly
         //console.log(response.data);
         setData({

@@ -41,7 +41,7 @@ function EditSkill(props) {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/editSkills",
+        "https://portfolio-backend-5cf0.onrender.com/editSkills",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -58,7 +58,7 @@ function EditSkill(props) {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/viewSkillEdit",
+          "https://portfolio-backend-5cf0.onrender.com/viewSkillEdit",
           { params: { id } }
         );
         setData(response.data);

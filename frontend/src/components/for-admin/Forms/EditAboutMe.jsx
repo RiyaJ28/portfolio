@@ -15,7 +15,7 @@ function EditAboutMe() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/editAboutMe", data);
+      const response = await axios.post("https://portfolio-backend-5cf0.onrender.com/editAboutMe", data);
       console.log(response.data);
       //setFormData({ name: "", email: "", message: "" });
       // Handle success (optional)
@@ -29,7 +29,7 @@ function EditAboutMe() {
     const fetchData = async () => {
         try {
             // Make a GET request to your backend endpoint
-            const response = await axios.get('http://localhost:5000/aboutMeData'); // Adjust the endpoint accordingly
+            const response = await axios.get('https://portfolio-backend-5cf0.onrender.com/aboutMeData'); // Adjust the endpoint accordingly
             //console.log(response.data);
             setData({
               aboutMe : response.data.aboutMe

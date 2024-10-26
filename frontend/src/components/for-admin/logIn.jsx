@@ -24,7 +24,7 @@ function LogIn() {
       setAlert(<div className="text-center"></div>);
       try {
         const response = await axios.post(
-          "http://localhost:5000/login",
+          "https://portfolio-backend-5cf0.onrender.com/login",
           formData
         )
         .then(res => {

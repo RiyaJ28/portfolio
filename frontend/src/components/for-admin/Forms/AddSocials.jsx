@@ -19,7 +19,7 @@ function AddSocials() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/editSocials",
+        "https://portfolio-backend-5cf0.onrender.com/editSocials",
         data
       );
       console.log(response.data);
@@ -36,7 +36,7 @@ function AddSocials() {
       try {
         // Make a GET request to your backend endpoint
         const response = await axios.get(
-          "http://localhost:5000/editSocialData"
+          "https://portfolio-backend-5cf0.onrender.com/editSocialData"
         ); // Adjust the endpoint accordingly
         //            //console.log(response.data);
         setData({

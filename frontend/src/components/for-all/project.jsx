@@ -27,7 +27,7 @@ function Project() {
   const fetchData = async () => {
     try {
       // Make a GET request to your backend endpoint
-      const response = await axios.get("http://localhost:5000/viewProjects"); // Adjust the endpoint accordingly
+      const response = await axios.get("https://portfolio-backend-5cf0.onrender.com/viewProjects"); // Adjust the endpoint accordingly
       //console.log(response.data);
       setData(response.data); // Update the state with the fetched data
     } catch (error) {

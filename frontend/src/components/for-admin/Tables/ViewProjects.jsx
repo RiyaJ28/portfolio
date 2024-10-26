@@ -19,7 +19,7 @@ function ViewProjects() {
   const fetchData = async () => {
     try {
       // Make a GET request to your backend endpoint
-      const response = await axios.get("http://localhost:5000/viewProjects"); // Adjust the endpoint accordingly
+      const response = await axios.get("https://portfolio-backend-5cf0.onrender.com/viewProjects"); // Adjust the endpoint accordingly
       console.log(response.data);
       setData(response.data); // Update the state with the fetched data
     } catch (error) {
@@ -34,7 +34,7 @@ function ViewProjects() {
 
   async function delete1(id) {
     try {
-      const response = await axios.post("http://localhost:5000/deleteProjects", { id });
+      const response = await axios.post("https://portfolio-backend-5cf0.onrender.com/deleteProjects", { id });
       console.log(response.data);
       refreshPage();
       // Handle success (optional)

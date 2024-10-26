@@ -10,7 +10,7 @@ function ViewEmails() {
   const fetchData = async () => {
     try {
       // Make a GET request to your backend endpoint
-      const response = await axios.get("http://localhost:5000/viewEmails"); // Adjust the endpoint accordingly
+      const response = await axios.get("https://portfolio-backend-5cf0.onrender.com/viewEmails"); // Adjust the endpoint accordingly
       console.log(response.data);
       setData(response.data); // Update the state with the fetched data
     } catch (error) {
@@ -25,7 +25,7 @@ function ViewEmails() {
 
   async function delete1(id) {
     try {
-      const response = await axios.post("http://localhost:5000/deleteEmails", { id });
+      const response = await axios.post("https://portfolio-backend-5cf0.onrender.com/deleteEmails", { id });
       console.log(response.data);
       if (response.data.success === true) {
         alert("Message deleted successfully");

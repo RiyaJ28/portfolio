@@ -35,7 +35,7 @@ function Contact() {
       setAlert(<div className="text-center"></div>);
       try {
         const response = await axios.post(
-          "http://localhost:5000/sendMessage",
+          "hhttps://portfolio-backend-5cf0.onrender.com/sendMessage",
           formData
         );
         console.log(response.data);
@@ -54,7 +54,7 @@ function Contact() {
       try {
         // Make a GET request to your backend endpoint
         const response = await axios.get(
-          "http://localhost:5000/editSocialData"
+          "https://portfolio-backend-5cf0.onrender.com/editSocialData"
         ); // Adjust the endpoint accordingly
         //            //console.log(response.data);
         setData({

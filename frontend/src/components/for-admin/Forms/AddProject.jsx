@@ -45,7 +45,7 @@ function AddProject() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/addProject",
+        "https://portfolio-backend-5cf0.onrender.com/addProject",
         formData,
         {
           headers: {
@@ -75,7 +75,7 @@ function AddProject() {
   // Fetch available skills for the select dropdown
   const fetchSkills = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/skillName"); // Adjust the endpoint
+      const response = await axios.get("https://portfolio-backend-5cf0.onrender.com/skillName"); // Adjust the endpoint
       console.log(response.data.skillNames);
       setSkillName(response.data.skillNames);
     } catch (error) {

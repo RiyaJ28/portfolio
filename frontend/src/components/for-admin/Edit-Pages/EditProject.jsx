@@ -50,7 +50,7 @@ function EditProject(props) {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/editProject", // Use project ID for editing
+        "https://portfolio-backend-5cf0.onrender.com/editProject", // Use project ID for editing
         formData,
         {
           headers: {
@@ -74,7 +74,7 @@ function EditProject(props) {
 
   const fetchProjectData = useCallback(async () => {
     try {
-      const response = await axios.get("http://localhost:5000/viewProjectEdit", { params: { id } });
+      const response = await axios.get("https://portfolio-backend-5cf0.onrender.com/viewProjectEdit", { params: { id } });
       const project = response.data;
       setData({
         name: project.name,
@@ -95,7 +95,7 @@ function EditProject(props) {
   // Fetch available skills for the select dropdown
   const fetchSkills = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/skillName");
+      const response = await axios.get("https://portfolio-backend-5cf0.onrender.com/skillName");
       setSkillName(response.data.skillNames);
     } catch (error) {
       console.error("Error fetching skill names:", error);
