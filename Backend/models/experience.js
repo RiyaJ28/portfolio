@@ -6,7 +6,7 @@ const experienceSchema = new mongoose.Schema({
   position: { type: String, required: true },
   start: { type: Date, required: true },
   end: { type: Date, required: true },
-  responsibilities: { type: String, required: true },
+  responsibilities: { type: [String], required: true }, // Store as array
 });
 
 const Experience = mongoose.model("experience", experienceSchema);

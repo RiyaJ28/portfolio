@@ -281,3 +281,16 @@ nav {
 	list-style:none;
   padding: 5px;
 }
+
+
+/*Experience*/
+#Experience{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #2c3e50;
+}
+#ExperienceItem{
+  color: #2c3e50;
+}

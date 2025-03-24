@@ -551,7 +551,12 @@ app.post("/addExperience", async (req, res) => {
   try {
     const { companyName, position, start, end, responsibilities } = req.body;
 
-    const experience = new Experience({
+    // Ensure responsibilities is an array
+    if (!Array.isArray(responsibilities)) {
+      return res.status(400).json({ error: "Responsibilities must be an array" });
+    }
+
+    const newExperience = new Experience({
       companyName,
       position,
       start,
@@ -559,7 +564,7 @@ app.post("/addExperience", async (req, res) => {
       responsibilities,
     });
 
-    await experience.save();
+    await newExperience.save();
     res.status(201).json({ success: true, message: "Experience added successfully" });
   } catch (error) {
     console.error("Error:", error);
@@ -586,7 +591,7 @@ app.get("/viewExperiences", async (req, res) => {
 // ✅ View Single Experience (for Editing)
 app.get("/viewExperienceEdit", async (req, res) => {
   try {
-    const { id } = req.query;
+    const { id } = req.body;
     const experience = await Experience.findById(id);
 
     if (!experience) {
@@ -623,15 +628,16 @@ app.post("/editExperience", async (req, res) => {
 });
 
 // ✅ Delete Experience
-app.post("/deleteExperience", async (req, res) => {
+app.post(`/deleteExperience`, async (req, res) => {
   try {
-    const { id } = req.query;
+    const { id } = req.body;
+    console.log(id);
 
     if (!id || id.length !== 24) {
       return res.status(400).json({ success: false, message: "Invalid experience ID" });
     }
 
-    const experience = await Experience.findByIdAndDelete(id);
+    const experience = await Experience.findByIdAndDelete( {_id: id} );
 
     if (!experience) {
       return res.status(404).json({ success: false, message: "Experience not found" });

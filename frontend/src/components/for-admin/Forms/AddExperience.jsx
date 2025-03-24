@@ -9,37 +9,40 @@ function AddExperience() {
     position: "",
     start: "",
     end: "",
-    responsibilities: "",
+    responsibilities: [],
   });
-  const [image, setImage] = useState(null);
 
   function handleChange(e) {
     setExperience({ ...experience, [e.target.name]: e.target.value });
   }
 
+  // Handle multiple responsibilities
+  const handleResponsibilitiesChange = (e) => {
+    const values = e.target.value.split("\n"); // Convert textarea input into an array
+    setExperience({ ...experience, responsibilities: values });
+  };
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("companyName", experience.companyName);
-    formData.append("position", experience.position);
-    formData.append("start", experience.start);
-    formData.append("end", experience.end);
-    formData.append("responsibilities", experience.responsibilities);
-    if (image) {
-      formData.append("image", image);
-    }
-
+    //const formData = new FormData();
+    //formData.append("companyName", experience.companyName);
+    //formData.append("position", experience.position);
+    //formData.append("start", experience.start);
+    //formData.append("end", experience.end);
+    //formData.append("responsibilities", experience.responsibilities);
+    //console.log(formData);
+    console.log(experience);
     try {
       const response = await axios.post(
+        //"https://portfolio-backend-5cf0.onrender.com/addExperience",
         "https://portfolio-backend-5cf0.onrender.com/addExperience",
-        formData,
-        { headers: { "Content-Type": "multipart/form-data" } }
+        experience
       );
 
       console.log(response.data);
       setExperience({ companyName: "", position: "", start: "", end: "", responsibilities: "" });
-      setImage(null);
 
       if (response.status === 201) {
         alert("Experience added successfully!");
@@ -74,11 +77,20 @@ function AddExperience() {
           <label className="form-label">End Date</label>
           <input type="date" className="form-control" name="end" value={experience.end} onChange={handleChange} required />
         </div>
-
         <div className="mb-3">
-          <label className="form-label">Responsibilities</label>
-          <textarea className="form-control" name="responsibilities" value={experience.responsibilities} onChange={handleChange} rows="3" required></textarea>
+          <label>Responsibilities</label>
+          <textarea
+            name="responsibilities"
+            className="form-control"
+            value={experience.responsibilities.join("\n")}
+            onChange={handleResponsibilitiesChange}
+            rows="3"
+            placeholder="Enter responsibilities, one per line"
+            required
+          ></textarea>
         </div>
+
+
 
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>

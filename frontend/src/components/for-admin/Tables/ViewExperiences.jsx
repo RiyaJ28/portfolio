@@ -32,7 +32,8 @@ function ViewExperiences() {
     if (!window.confirm("Are you sure you want to delete this experience?")) return;
 
     try {
-      await axios.delete(`"https://portfolio-backend-5cf0.onrender.com/deleteExperience/${id}`);
+      console.log(id);
+      await axios.post("https://portfolio-backend-5cf0.onrender.com/deleteExperience", {id:id});
       alert("Experience deleted successfully!");
       refreshPage();
     } catch (error) {
@@ -43,7 +44,7 @@ function ViewExperiences() {
 
   // Navigate to edit page
   function handleEdit(exp) {
-    navigate("/dashboard", { state: { state: true, page: "Edit Experience", experience: exp } });
+    navigate("/dashboard", { state: { state: true, page: "Edit Experience", id:exp } });
   }
 
   return (
@@ -56,6 +57,7 @@ function ViewExperiences() {
             <th scope="col">Company</th>
             <th scope="col">Position</th>
             <th scope="col">Duration</th>
+            <th scope="col">Responsibilities</th>
             <th scope="col">Edit/Delete</th>
           </tr>
         </thead>
@@ -66,8 +68,9 @@ function ViewExperiences() {
               <td>{exp.companyName}</td>
               <td>{exp.position}</td>
               <td>{exp.start} - {exp.end}</td>
+              <td>{exp.responsibilities}</td>
               <td>
-                <span onClick={() => handleEdit(exp)}><EditIcon /></span> /
+                <span onClick={() => handleEdit(exp._id)}><EditIcon /></span> /
                 <span onClick={() => deleteExperience(exp._id)}><DeleteIcon /></span>
               </td>
             </tr>
