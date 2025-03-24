@@ -71,7 +71,7 @@ function Contact() {
     fetchData(); // Call the fetchData function when the component mounts
   }, []);
   return (
-    <div className="contact container" id="contact">
+    <div className="contact " id="contact">
       <h1 className="text-center pt-5 pb-1">Want to Get in Touch?</h1>
       <h1 className="text-center pb-1">Drop me a line...</h1>
       <p className="text-center pb-3">251riyajain@gmail.com</p>

@@ -73,6 +73,12 @@ function SideNav(props) {
             id="socialManagement"
             subtitle={["Add Socials"]}
           />
+          <SideMenu
+            hrefId="#experienceManagement"
+            title="Experience Management"
+            id="experienceManagement"
+            subtitle={["Add Experience", "View Experiences"]}
+          />
         </ul>
       </div>
     </div>

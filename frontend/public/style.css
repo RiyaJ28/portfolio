@@ -205,28 +205,29 @@ nav {
 }
 /*Contact */
 .contact{
-    color: #2c3e50;
+  background-color: #2c3e50;
+    color: #fff8f8;
 }
 .contactMeForm{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #2c3e50;
+    color: #fff8f8;
 }
 .contactMeForm form{
     width: 60%;
     padding-bottom: 50px;
 }
 .btn-color{
-    color: #fff8f8;
-    background-color: #2c3e50;
-    border-color: #2c3e50;
+    color: #2c3e50;
+    background-color:  #fff8f8;
+    border-color: #fff8f8;
     border: none;
     border-radius: 15px;
     padding: 5px 20px ;
 }
 .social{
-    color: #2c3e50;
+    color: #fff8f8;
     margin:0px 5px;
 }
 /*footer */
@@ -235,8 +236,8 @@ nav {
   padding-bottom: 50px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: #2c3e50;
-  color: #fff8f8;
+  background-color: #fff8f8;
+  color: #2c3e50;
 }
 
 /*login*/

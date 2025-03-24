@@ -6,6 +6,7 @@ import Skills from "./for-all/skills";
 import Project from "./for-all/project";
 import Contact from "./for-all/contact";
 import Footer from "./for-all/footer";
+import Expeience from "./for-all/experience";
 import {motion} from "framer-motion";
 
 
@@ -18,6 +19,7 @@ function Main() {
       <About />
       <Skills />
       <Project />
+      <Expeience />
       <Contact />
       <Footer />
     </motion.div>

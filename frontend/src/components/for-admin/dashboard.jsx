@@ -16,6 +16,9 @@ import ViewProjects from "./Tables/ViewProjects";
 import ViewSocials from "./Tables/ViewSocials";
 import EditProject from "./Edit-Pages/EditProject";
 import EditSkill from "./Edit-Pages/EditSkill";
+import AddExperience from "./Forms/AddExperience";
+import ViewExperiences from "./Tables/ViewExperiences";
+import EditExperience from "./Forms/EditExperience";
 
 function Dashboard() {
   const navigate = useNavigate(); // Renamed to 'navigate' for clarity
@@ -181,6 +184,38 @@ function Dashboard() {
           <div className="row">
             <SideNav />
             <EditSkill id={id}/>
+          </div>
+        </div>
+      );
+    }else if (page === "Add Experience") {
+      return (
+        <div className="">
+          <DashboardHeader />
+          <div className="row">
+            <SideNav />
+            <AddExperience />
+          </div>
+        </div>
+      );
+    }
+    else if (page === "View Experiences") {
+      return (
+        <div className="">
+          <DashboardHeader />
+          <div className="row">
+            <SideNav />
+            <ViewExperiences />
+          </div>
+        </div>
+      );
+    }
+    else if (page === "Edit Experience") {
+      return (
+        <div className="">
+          <DashboardHeader />
+          <div className="row">
+            <SideNav />
+            <EditExperience id={id}/>
           </div>
         </div>
       );

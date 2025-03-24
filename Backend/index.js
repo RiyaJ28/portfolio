@@ -14,6 +14,7 @@ import Skill from "./models/skills.js";
 import Project from "./models/project.js";
 import Message from "./models/message.js";
 import Socials from "./models/socials.js";
+import Experience from "./models/experience.js";
 
 // Call dotenv.config() to load environment variables from .env file
 dotenv.config();
@@ -544,6 +545,104 @@ app.get("/editSocialData", async (req, res) => {
 });
 
 
+/*------Experience------ */
+// ✅ Add Experience
+app.post("/addExperience", async (req, res) => {
+  try {
+    const { companyName, position, start, end, responsibilities } = req.body;
+
+    const experience = new Experience({
+      companyName,
+      position,
+      start,
+      end,
+      responsibilities,
+    });
+
+    await experience.save();
+    res.status(201).json({ success: true, message: "Experience added successfully" });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ success: false, message: "Failed to add experience" });
+  }
+});
+
+// ✅ View All Experiences
+app.get("/viewExperiences", async (req, res) => {
+  try {
+    const experiences = await Experience.find();
+
+    if (experiences.length > 0) {
+      res.status(200).json(experiences);
+    } else {
+      res.status(404).json({ success: false, message: "No experiences found" });
+    }
+  } catch (err) {
+    console.error("Error:", err);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+});
+
+// ✅ View Single Experience (for Editing)
+app.get("/viewExperienceEdit", async (req, res) => {
+  try {
+    const { id } = req.query;
+    const experience = await Experience.findById(id);
+
+    if (!experience) {
+      return res.status(404).json({ success: false, message: "Experience not found" });
+    }
+
+    res.status(200).json(experience);
+  } catch (err) {
+    console.error("Error:", err);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+});
+
+// ✅ Edit Experience
+app.post("/editExperience", async (req, res) => {
+  try {
+    const { id, companyName, position, start, end, responsibilities } = req.body;
+
+    const updatedExperience = await Experience.findByIdAndUpdate(
+      id,
+      { companyName, position, start, end, responsibilities },
+      { new: true }
+    );
+
+    if (!updatedExperience) {
+      return res.status(404).json({ success: false, message: "Experience not found" });
+    }
+
+    res.status(200).json({ success: true, message: "Experience updated successfully" });
+  } catch (error) {
+    console.error("Error updating experience:", error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+});
+
+// ✅ Delete Experience
+app.post("/deleteExperience", async (req, res) => {
+  try {
+    const { id } = req.query;
+
+    if (!id || id.length !== 24) {
+      return res.status(400).json({ success: false, message: "Invalid experience ID" });
+    }
+
+    const experience = await Experience.findByIdAndDelete(id);
+
+    if (!experience) {
+      return res.status(404).json({ success: false, message: "Experience not found" });
+    }
+
+    res.status(200).json({ success: true, message: "Experience deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting experience:", error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+});
 
 
 // Start the server
