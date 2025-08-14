@@ -13,7 +13,7 @@
 
 ## 📸 Preview
 <p align="center">
-  <img src="assets/preview-home.png" alt="Portfolio Home Preview" width="80%">
+  <img src="assets/Screenshot (233).png" alt="Portfolio Home Preview" width="80%">
 </p>
 
 ---
